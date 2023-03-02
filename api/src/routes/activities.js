@@ -4,31 +4,13 @@ const { Activity, Country } = require('../db');
 const router = Router();
 
 router.get('/', async (req, res) => {
-  try {
-    const allCountries = Country.findAll();
-    if(!allCountries.length){
-        allCountries = await axios.get('https://restcountries.com/v3/all');
-    var apiCountries = apiCountriesResponse.data.map((e) => {
-      return {
-        id: e.cca3,
-        name: e.name.common,
-        image: e.flags[0],
-        continent: e.continents[0],
-        capital: e.capital ? e.capital[0] : 'Not found',
-        subregion: e.subregion,
-        area: e.area,
-        population: e.population
-      }
+    const allActivities = await Activity.findAll({ include: Country })
+    //filtro para el front que trae todas las actividades
+    const filterA = allActivities.map(e => e.name.toLowerCase())
+    const total = filterA.filter((item, index) => {
+        return filterA.indexOf(item) === index;
     })
-        console.log('creado')
-        await Country.create(apiCountries);
-        res.status(200).json(allCountries)
-
-  }
-    
-  } catch (error) {
-    res.status(404).json({msg : error.msg})
-  }
+    res.json(total)
 });
 
 router.post('/', async (req, res, next) => {
