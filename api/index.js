@@ -18,13 +18,13 @@
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
-const { conn, Country } = require('./src/db.js');
-const axios = require('axios')
+const { conn } = require('./src/db.js');
+const loadDataCountris = require("./src/utils/utils"); //export function 
 
 // Syncing all the models at once.
 conn.sync({ force: false }).then(() => {
   server.listen(3001, async () => {
-    
+    await loadDataCountris();
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
 });
