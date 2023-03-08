@@ -1,0 +1,8 @@
+.container{
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    border-radius: 15px;
+    flex-wrap: wrap;   /*mantiene el tamaño en la pantalla*/
+    gap: 1em;  /*espacio entre cartas */
+}
