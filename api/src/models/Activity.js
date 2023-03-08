@@ -3,8 +3,8 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
   sequelize.define('activity', {
     id: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
       primaryKey: true,
       allowNull: false,
 
@@ -14,15 +14,15 @@ module.exports = (sequelize) => {
       allowNull: false
     },
     difficulty: {
-      type: DataTypes.ENUM('1', '2', '3', '4', '5'),
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     duration: {
-      type: DataTypes.ENUM('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24'),
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     season: {
-      type: DataTypes.ENUM('Summer', 'Autumn', 'Winter', 'Spring'),
+      type: DataTypes.STRING,
       allowNull: false
     }
   }

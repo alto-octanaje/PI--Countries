@@ -3,35 +3,35 @@ const { Country, Activity } = require("../db");
 
 module.exports={
     createActivities: async(name, difficulty, duration, season, countries )=>{
-
         let activityExists = await Activity.findAll({
             where: { name: name},
             // include: [{ model:Country}]
         })
-       
        if (activityExists.length===0) {
-
         try {
-            let newActivity = await Activity.create({ name, difficulty, duration, season })
+            let newActivity = await Activity.create({ 
+                name, difficulty, duration, season 
+            });
             for(let nCountry of countries){
                 const selectedCountry = await Country.findOne({where: {name: nCountry}})
-                // let newActivity = await Activity.create({ name, difficulty, duration, season })
                 await newActivity.addCountry(selectedCountry)
             }
             
-            console.log("cparte 7 ");
-        
            return newActivity
-    
-        } catch (error) {
-            throw new Error(error.message);
+        } 
+        catch (error) {
+            res.status(400).json({error: error.msg})
+
         }
        }
        else{
-        throw new Error("Activity already exists");
+        res.status(400).json({error: error.msg})
+        // throw new Error("Activity already exists");
        }
     }
 }
+
+// --------------------------------------------
 
 // try {
 //     console.log("cparte 1");
@@ -48,11 +48,11 @@ module.exports={
 //         return res.status(404).json({msg: "incomplete form"})
 //     }
 //     console.log("cparte 2");
-    // let activityExists = await Activity.findOne({
+//     let activityExists = await Activity.findOne({
         
-    //     where: { name: name},
-    //     // include: [{ model:Country, where:{  name: countries } }]
-    // })
+//         where: { name: name},
+//         // include: [{ model:Country, where:{  name: countries } }]
+//     })
 //     console.log("cparte 3");
 //     if(activityExists){
        

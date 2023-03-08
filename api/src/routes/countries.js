@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
     try {
         res.status(200).json(allCountries) 
     } catch (error) {
-        res.status(404).json({msg: "No data in the database"})
+        res.status(404).json({err: error.message})
     }
 });
 
@@ -21,31 +21,31 @@ router.get('/:id', async (req, res, next) => {
         if (id.length > 1) {
                     idCountries = await Country.findByPk(id, { include: Activity })
             
-                    idCountries = {
-                        id: idCountries.id,
-                        name: idCountries.name,
-                        image: idCountries.image,
-                        continent: idCountries.continent,
-                        capital: idCountries.capital,
-                        subregion: idCountries.subregion,
-                        area: idCountries.area,
-                        population: idCountries.population,
-                        activities: idCountries.activities.map((e) => {
-                            return {
-                                id: e.id,
-                                name: e.name,
-                                difficulty: e.difficulty,
-                                duration: e.duration,
-                                season: e.season
-                            }
-                        })
-                    }
+                //     idCountries = {
+                //         id: idCountries.id,
+                //         name: idCountries.name,
+                //         image: idCountries.image,
+                //         continent: idCountries.continent,
+                //         capital: idCountries.capital,
+                //         subregion: idCountries.subregion,
+                //         area: idCountries.area,
+                //         population: idCountries.population,
+                //         activities: idCountries.activities.map((e) => {
+                //             return {
+                //                 id: e.id,
+                //                 name: e.name,
+                //                 difficulty: e.difficulty,
+                //                 duration: e.duration,
+                //                 season: e.season
+                //             }
+                //         })
+                //     }
                 }
                 res.json(idCountries)
       
         
     } catch (error) {
-        res.status(200).json({msg: "ID not found"})
+        res.status(200).json({err: error.message})
     }
 
  

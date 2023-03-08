@@ -5,8 +5,7 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('country', {
     id: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
+      type: DataTypes.STRING,
       allowNull: false,
       primaryKey: true
     },
@@ -28,15 +27,19 @@ module.exports = (sequelize) => {
     },
     subregion: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: false
+    },
+    region:{
+      type: DataTypes.STRING,
+      allowNull:false,
     },
     area: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: false
     }, 
     population: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull:false
     }
   });
 };
