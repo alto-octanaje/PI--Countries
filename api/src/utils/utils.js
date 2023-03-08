@@ -1,5 +1,5 @@
 const axios = require("axios");
-const {Country} = require('../db');
+const {Country} = require('../db'); 
 
 
 const allCountries=async () =>{ 
