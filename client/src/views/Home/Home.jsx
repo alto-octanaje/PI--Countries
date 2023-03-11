@@ -4,13 +4,13 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getCountris } from "../../Redux/action/action";
 
-const Home=()=>{
-    const dispatch =useDispatch();
 
+const Home=()=>{
+
+    const dispatch =useDispatch();
     useEffect(()=>{
         dispatch(getCountris());
     },[dispatch])
-
 
     return(
     <>

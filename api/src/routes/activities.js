@@ -10,7 +10,6 @@ router.get("/", async(req,res)=>{
     try {
         const { name } = req.query;  
         console.log(name);
-
         if(name){
             const SearchActivity = await Activity.findAll({
                 where: {
@@ -41,10 +40,6 @@ router.get("/", async(req,res)=>{
     }
     
 })
-
-
-
-
 
 //This route generates all activities
 router.get('/allActivities', async (req, res) => {

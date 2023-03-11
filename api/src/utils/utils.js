@@ -24,7 +24,7 @@ const allCountries=async () =>{
   }
  
   }
-
+ 
 module.exports= {allCountries}
 
 

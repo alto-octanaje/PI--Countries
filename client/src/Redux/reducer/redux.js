@@ -1,15 +1,24 @@
-import { GET_COUNTRIES } from "../action/action_type";
+import { GET_COUNTRIES ,GET_COUNTRY_DETAILS } from "../action/action_type";
 
 const inicialState={
     countries: [],
+    countriesDetail:[],
 }
-const rootReducer=(state=inicialState,action)=>{
+const rootReducer=(state= inicialState,action)=>{
 
 switch (action.type) {
     case GET_COUNTRIES:
         return {...state,
-        countries:action.payload};
+        countries:action.payload}
 
+    case GET_COUNTRY_DETAILS:
+        console.log("objeto");
+        console.log(action.payload);
+        return {
+            ...state,
+            countriesDetail: action.payload
+        }
+    
     default:
         return {...state};
 }
