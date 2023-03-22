@@ -1,0 +1,30 @@
+.stilecontenedor{
+    color: blue;
+    display: flex;
+    /* flex-direction: row;
+    gap: 10px; */
+    align-items: center ;
+    justify-content: center;
+    /* font-family: 'Pacifico', cursive; */
+}
+.styleDitails{
+    color:rgb(15, 15, 15);
+    display: flex;
+    align-items: center ;
+    /* justify-content: center;  */
+    flex-direction: column;
+}
+/* .styleActivitis{
+    display: flex;
+    flex-direction: column;
+
+} */
+
+.imagen{
+    display: flex;
+    align-items: center ;
+    flex-direction: column;
+}
+.title{
+    font-family: 'Pacifico', cursive;
+}

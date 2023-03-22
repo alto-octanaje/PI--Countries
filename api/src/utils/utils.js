@@ -4,7 +4,8 @@ const {Country} = require('../db');
 
 const allCountries=async () =>{ 
     const buscar = Country.findAll();
-  if(buscar.length===0){
+    
+  if(!buscar){
     let  apiCountriesResponse = await axios.get('https://restcountries.com/v3/all');
     await apiCountriesResponse.data.map((e) => {
       let country= {
@@ -19,10 +20,11 @@ const allCountries=async () =>{
         population: e.population
       }
       Country.findOrCreate({where: country });
+      // Country.bulkCreate({where: country });
     })
 
   }
- 
+ else console.log("ya esta en mi base de datos");
   }
  
 module.exports= {allCountries}

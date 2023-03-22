@@ -1,5 +1,11 @@
 body {
-  margin: 0;
+  width: 0 auto; /* establece el ancho de la página en 1000 píxeles */
+  height: 800 px; /* establece la altura de la página en 800 píxeles */
+  margin: 0 auto; /* centra el contenido horizontalmente */
+  background: #fff url("https://img.elo7.com.br/product/zoom/2855E8F/painel-sublimado-1-50mx2-50m-volta-ao-mundo-painel-tecido-sublimado.jpg")no-repeat center center fixed;
+  background-size: cover;  /*ajusta la image al tamaño de la pg*/
+ 
+
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;

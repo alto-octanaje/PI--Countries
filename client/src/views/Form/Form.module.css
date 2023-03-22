@@ -1,0 +1,20 @@
+.botFrom{
+    display: inline-block;
+    background-color: #013969;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .botFrom:hover {
+    background-color: #0238a2;
+    transform: translateY(-2px);
+    color: #000000;
+  }

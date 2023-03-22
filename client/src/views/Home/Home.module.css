@@ -1,0 +1,16 @@
+.divCards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1em;
+    margin: 5px;
+    font-weight: 500;
+    border-radius: 5%;
+    transition: 0.7s; 
+    
+  }
+  .listItem:hover {
+    background-color: #3503ffc9;
+    color: beige;
+  }

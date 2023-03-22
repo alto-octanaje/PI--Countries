@@ -3,7 +3,7 @@ const { Country, Activity } = require('../db');
 const router = Router();
 // const axios = require('axios')
 
- 
+  
 router.get('/', async (req, res) => {
     const { name } = req.query
     const allCountries = await Country.findAll({ include: Activity });

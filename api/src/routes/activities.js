@@ -44,7 +44,7 @@ router.get("/", async(req,res)=>{
 //This route generates all activities
 router.get('/allActivities', async (req, res) => {
     const allActivities = await Activity.findAll({ 
-        
+        include: Country
     })
     res.json(allActivities)
 });

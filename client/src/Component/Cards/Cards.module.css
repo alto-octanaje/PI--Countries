@@ -1,6 +1,8 @@
 .theCards{
     border: 1px solid black;
-    width: fit-content;
-    height: fit-content;
+    width: min-content;
+    height: 400px;
     border-radius: 5px;
+    padding: 10px;
+    margin-top: 2em;
 }

@@ -5,7 +5,7 @@ module.exports={
     createActivities: async(name, difficulty, duration, season, countries )=>{
         let activityExists = await Activity.findAll({
             where: { name: name},
-            // include: [{ model:Country}]
+            include: [{ model:Country}]
         })
        if (activityExists.length===0) {
         try {
@@ -13,6 +13,7 @@ module.exports={
                 name, difficulty, duration, season 
             });
             for(let nCountry of countries){
+                console.log(nCountry);
                 const selectedCountry = await Country.findOne({where: {name: nCountry}})
                 await newActivity.addCountry(selectedCountry)
             }
@@ -25,8 +26,8 @@ module.exports={
         }
        }
        else{
-        res.status(400).json({error: error.msg})
-        // throw new Error("Activity already exists");
+        // res.status(400).json({error: error.msg})
+        throw new Error("Activity already exists");
        }
     }
 }

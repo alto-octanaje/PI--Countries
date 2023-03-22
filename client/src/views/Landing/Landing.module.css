@@ -1,0 +1,20 @@
+.buttoomLanding{
+        display: inline-block;
+        background-color: #1b7cfaf7;
+        color: #e6e621;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        font-size: 10px;
+        font-weight: bold;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .buttoomLanding:hover{
+        background-color: #00158d;
+        transform: translateY(-2px);
+        color: #ffffff;
+      }
+    
