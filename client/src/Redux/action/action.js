@@ -77,10 +77,10 @@ export function filterPopulation(params) {
   }
 }
 
-export function filterActivities(act) {
+export function filterActivities() {
   return{
     type:FILTER_ACTIVITY,
-    payload: act
+  
   }
 }
 

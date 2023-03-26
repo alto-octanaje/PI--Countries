@@ -12,7 +12,7 @@ const Cards=(porps)=>{
             </Link>
         </div>
     )
-}
+}  
 export default Cards
 
 //debe mostrar la info de cada usuario mapeado de mi array de inf y darnos un link del detalle 

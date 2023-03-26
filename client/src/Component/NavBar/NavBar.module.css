@@ -1,7 +1,12 @@
 .mainContainer{
+    color: aliceblue;
     display: flex;
     flex-direction: row;
     justify-content: space-around; /* controla la distana en pg */
     border-radius: 10px;
-    border: 1px solid black;
+    background: linear-gradient(20deg, #ffffff 2%, #47c1e2 76%);
+    padding: .5rem;
+    border: 3px groove #05325a;
+    box-shadow: 6px 22px 28px 6px #015470;
+    opacity: 0.92;
 }

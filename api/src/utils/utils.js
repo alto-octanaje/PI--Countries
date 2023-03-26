@@ -4,8 +4,8 @@ const {Country} = require('../db');
 
 const allCountries=async () =>{ 
     const buscar = Country.findAll();
-    
-  if(!buscar){
+     
+  if(buscar.length===0){
     let  apiCountriesResponse = await axios.get('https://restcountries.com/v3/all');
     await apiCountriesResponse.data.map((e) => {
       let country= {

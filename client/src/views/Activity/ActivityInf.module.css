@@ -1,0 +1,12 @@
+.divCardsAtivity {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.2em;
+    margin: 5px;
+    font-weight: 100;
+    border-radius: 5%;
+    transition: 0.7s; 
+    
+  }

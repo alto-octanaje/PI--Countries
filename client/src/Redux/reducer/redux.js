@@ -74,10 +74,10 @@ switch (action.type) {
         case FILTER_ACTIVITY:
             console.log(action.payload +"en payload");
             const allActivities = state.countries;
-            const activityFilter = action.payload === 'All' ? 
-                allActivities.filter(e => e.activities.length > 0) 
-                :allActivities.filter(c => c.activities.find((element) => element.name.toLowerCase() === action.payload))
-                console.log("estoy   : "+ activityFilter);
+            const activityFilter = allActivities.filter(e => e.activities.length > 0) 
+                // ? allActivities.filter(c => c.activities.find((element) => element.name.toLowerCase() === action.payload)):"noy hay elemen"
+                console.log("estoy");
+                console.log(activityFilter);
             return {
                 ...state,
                 // continent: activityFilter,
